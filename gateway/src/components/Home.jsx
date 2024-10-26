@@ -28,20 +28,20 @@ function Home() {
 
   return (
     <div style={{ textAlign: 'center' }}>
-      <h2>Dummy QR Code Payment Gateway</h2>
-      <input
+      <h2>Eazy-Pay by Aswin - A Different Payment Gateway</h2>
+      <input style={{border:'15px blue', backgroundColor:'#EBEBEB', padding:'12px 5px', borderRadius:'10px', marginRight:'10px',width:'300px'}}
         type="number"
         placeholder="Enter amount"
         value={amount}
         onChange={(e) => setAmount(e.target.value)}
       />
-      <button onClick={createPayment}>Generate QR Code</button>
+      <button style={{color:'blue', backgroundColor:'#EBEBEB'}} onClick={createPayment}>Generate QR Code</button>
 
       {qrCodeImage && (
         <div>
           <h3>Scan this QR Code to make payment</h3>
           <img src={qrCodeImage} alt="Payment QR Code" style={{ marginTop: '20px' }} />
-          <button onClick={() => checkPaymentStatus(response.data.token)}>
+          <button style={{color:'blue', backgroundColor:'#EBEBEB'}} onClick={() => checkPaymentStatus(response.data.token)}>
             Check Payment Status
           </button>
           {paymentStatus && <h4>Payment Status: {paymentStatus}</h4>}
